@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Demo Shopping Cart</h1>
+        <form action="MainController" method="POST">
+            Please choose your phone:
+            <select name="listPhone">
+                <option value="ip1-Iphone1-100">Iphone1</option>
+                <option value="ip2-Iphone2-200">Iphone2</option>
+                <option value="ip3-Iphone3-300">Iphone3</option>
+                <option value="ip4-Iphone4-400">Iphone4</option>
+                <option value="ip5-Iphone5-500">Iphone5</option>
+                <option value="ip6-Iphone6-600">Iphone6</option>
+                <option value="ip7-Iphone7-700">Iphone7</option>
+            </select>
+            <br/>
+            <input type="submit" name="action" value="Add to cart"/>
+            <a href="MainController?action=view">View Cart</a>
+            
+        </form>
+    </body>
+</html>

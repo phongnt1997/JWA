@@ -1,0 +1,61 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="">
+            <result>index.jsp</result>
+        </action>
+        <action name="login" class="phong.struts.LoginAction">
+            <result name="input">index.jsp</result>
+            <result name="1">staff.jsp</result>
+            <result name="2">staff.jsp</result>
+            <result name="0">user.jsp</result>
+           
+           
+        </action>
+           
+           
+      
+        <action name="search" class="phong.struts.SearchAction">
+            <result name="staff">staff.jsp</result>
+            <result name="user">user.jsp</result>
+        </action>
+        <action name="deleteMobile" class="phong.struts.DeleteMobileAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">search</param>
+                <param name="searchValue">${lastSearchValue}</param>
+            </result>
+        </action>
+        <action name="updateMobile" class="phong.struts.UpdateMobileAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">search</param>
+                <param name="searchValue">${lastSearchValue}</param>
+            </result>
+        </action>
+        <action name="insertMobile" class="phong.struts.InsertMobileAction">
+            <result name="success">insert.jsp</result>
+        </action>
+        <action name="searchByPrice" class="phong.struts.SearchByPriceAction">
+            <result name="success">user.jsp</result>
+        </action>
+        <action name="addToCart" class="phong.struts.AddToCartAction">
+            <result name="success" type="redirectAction">
+                <param name="actionName">searchByPrice</param>
+                <param name="minPrice">${minSearchValue}</param>
+                <param name="maxPrice">${maxSearchValue}</param>
+            </result>
+        </action>
+        <action name="removeItem" class="phong.struts.RemoveItemAction">
+            <result name="success">viewCart.jsp</result> 
+        </action>
+        <action name="checkOut" class="phong.struts.CheckOutAction">
+            <result name="success">user.jsp</result> 
+        </action>
+        
+
+    </package>
+</struts>
